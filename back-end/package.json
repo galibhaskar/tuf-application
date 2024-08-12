@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "setup": "node db.js",
-    "build": "npm run setup && node index.js"
+    "start": "npm run setup && node index.js"
   },
   "type": "module",
   "keywords": [],
