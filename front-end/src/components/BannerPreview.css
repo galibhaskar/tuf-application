@@ -1,0 +1,71 @@
+.banner-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+.banner-preview-container {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  text-align: center;
+}
+
+.banner-preview h1 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.banner-preview-timer {
+  font-size: 1.5em;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.banner-preview-visibility-time {
+  font-size: 1.2em;
+  color: #fff;
+  background-color: #007bff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.banner-preview-link {
+  font-size: 1.2em;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.banner-preview-link:hover {
+  text-decoration: underline;
+}
+
+.banner-preview-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.banner-preview-badge.not-started {
+  background-color: #ffc107; /* Yellow for Not Started */
+}
+
+.banner-preview-badge.running {
+  background-color: #28a745; /* Green for Running */
+}
+
+.banner-preview-badge.expired {
+  background-color: #dc3545; /* Red for Expired */
+}

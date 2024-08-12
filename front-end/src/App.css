@@ -1,0 +1,19 @@
+.banner {
+  padding: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.dashboard {
+  padding: 20px;
+}
+
+.dashboard form {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard form div {
+  margin-bottom: 10px;
+}

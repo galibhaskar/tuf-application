@@ -1,0 +1,214 @@
+.banner-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    width: 400px;
+    min-height: 220px; /* Fixed card height */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .banner-item h3 {
+    margin: 0;
+    font-size: 1.1em;
+    color: #444;
+  }
+  
+  .banner-item label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .banner-item label span {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .banner-item input,
+  .banner-item textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .banner-item input:disabled,
+  .banner-item textarea:disabled {
+    background-color: #e0e0e0;
+    color: #999;
+    pointer-events: none; /* Prevent interactions */
+  }
+  
+  .banner-item .toggle-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+    margin-left: 10px;
+    margin-bottom: 0 !important;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 22px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    left: 2px;
+    bottom: 0px;
+    background-color: white;
+    transition: .4s;
+  }
+  
+  input:checked + .toggle-disable {
+    background-color: #ccc!important;
+    cursor:default;
+  }
+
+  input:checked + .slider {
+    background-color: #28a745;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(18px);
+  }
+  
+  .slider.round {
+    border-radius: 22px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  .banner-item button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 8px;
+    transition: background-color 0.2s;
+  }
+  
+  .banner-item button:hover {
+    background-color: #0056b3;
+  }
+  
+  .banner-item .save-button {
+    background-color: #28a745;
+  }
+  
+  .banner-item .save-button:hover {
+    background-color: #218838;
+  }
+  
+  .banner-item .cancel-button {
+    background-color: #dc3545;
+  }
+  
+  .banner-item .cancel-button:hover {
+    background-color: #c82333;
+  }
+  
+  .banner-item .edit-button {
+    background-color: #007bff;
+  }
+  
+  .banner-item .edit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .banner-item .delete-button {
+    background-color: #dc3545;
+  }
+  
+  .banner-item .delete-button:hover {
+    background-color: #c82333;
+  }
+  
+  .footer {
+    display: flex;
+  }
+
+  /* Add this to your existing CSS file */
+
+.banner-item {
+    position: relative; /* Added to position preview icon */
+  }
+  
+  .preview-button {
+    background-color: #ecd318 !important;
+    color: black !important;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .preview-button:hover {
+    background-color: #ffe100c8 !important;
+  }
+  
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .disable {
+    pointer-events: none;
+    opacity: 50%;
+  }
+
+  .banner-preview-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    width: fit-content;
+  }
+  
+  .banner-preview-badge.not-visible {
+    background-color: #ffc107; /* Yellow for Not Started */
+  }
+  
+  .banner-preview-badge.visible {
+    background-color: #28a745; /* Green for Running */
+  }
+  
+  .banner-preview-badge.expired {
+    background-color: #dc3545; /* Red for Expired */
+  }
