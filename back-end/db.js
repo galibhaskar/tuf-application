@@ -20,7 +20,7 @@ export const query = async (text, params) => {
 
 const createTable = async () => {
   try {
-    const sql = fs.readFileSync("./scripts/createTable.sql", 'utf8');
+    const sql = fs.readFileSync("../back-end/scripts/createTable.sql", 'utf8');
     await pool.query(sql);
     console.log('Table created or already exists');
   } catch (err) {

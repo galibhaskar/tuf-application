@@ -14,7 +14,7 @@ app.use(cors());
 
 app.use(json());
 
-app.get("/api", (req, res) => {
+app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
@@ -22,4 +22,12 @@ app.use("/api/banner", bannerRoutes);
 
 app.listen(port, host, () => {
   console.log(`Server running at http://${host}:${port}`);
+});
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('SIGINT signal received.');
+  await pool.end(); // Close the pool
+  console.log('Pool has ended.');
+  process.exit(0);
 });
