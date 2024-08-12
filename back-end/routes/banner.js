@@ -9,7 +9,7 @@ router.use(responseMapper);
 // Get all banners
 router.get("/", async (req, res) => {
   try {
-    const results = await query("SELECT * FROM banner where visible = 1");
+    const results = await query("SELECT * FROM banner where visible = true");
     res.json(res.mapResponse(results));
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -73,7 +73,7 @@ router.delete("/:id", async (req, res) => {
 
   try {
     await query(
-      `UPDATE banner SET visible = 0 WHERE id = ${id}`
+      `UPDATE banner SET visible = false WHERE id = ${id}`
     );
     res.json({ message: "Banner Deleted" });
   } catch (err) {
