@@ -28,4 +28,4 @@ const createTable = async () => {
   }
 };
 
-createTable().then(() => pool.end());
+createTable();
