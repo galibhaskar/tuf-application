@@ -7,10 +7,7 @@ const env = process.env.NODE_ENV || 'development'; // Default to 'development'
 dotenv.config({ path: path.resolve(process.cwd(), `.env.${env}`) });
 
 export default {
-  hostname: process.env.HOST,
-  database: process.env.DATABASE,
-  username: process.env.USERNAME,
-  password: process.env.PASSWORD,
-  port: process.env.PORT,
+  POSTGRES_URL: process.env.POSTGRES_URL,
+  API_PORT:process.env.API_PORT,
   cronUpdateVisibilitySchedule: process.env.CRON_UPDATE_VISIBILITY,
 };

@@ -1,23 +1,31 @@
-import { createPool } from 'mysql2';
-import config from './config.js';
+import pg from 'pg';
+import fs from 'fs';
 
-export const pool = createPool({
-    host: config.hostname,
-    user: config.username,
-    password: config.password,
-    database: config.database,
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0
-});
+const { Pool } = pg;
 
-const promisePool = pool.promise();
+import config from "./config.js";
 
-export const query = async (sql, params) => {
+export const pool = new Pool({
+  connectionString: config.POSTGRES_URL,
+})
+
+export const query = async (text, params) => {
   try {
-    const [rows] = await promisePool.query(sql, params);
+    const { rows } = await pool.query(text, params);
     return rows;
   } catch (err) {
     throw err;
   }
 };
+
+const createTable = async () => {
+  try {
+    const sql = fs.readFileSync("./scripts/createTable.sql", 'utf8');
+    await pool.query(sql);
+    console.log('Table created or already exists');
+  } catch (err) {
+    console.error('Error creating table:', err);
+  }
+};
+
+createTable().then(() => pool.end());
